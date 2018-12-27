@@ -7,10 +7,10 @@
 
                 <div class="m-auto text-center" v-if="isTravel">
                     <router-link tag="a" class="btn  text-dark travelbtn "  to="/travelbg" active-class="activeBtn"><b>В БЪЛГАРИЯ</b></router-link>
-                    <router-link tag="a" class="btn  text-dark travelbtn" to="/advices" active-class="activeBtn"><b>В ЧУЖБИНА</b></router-link>
+                    <router-link tag="a" class="btn  text-dark travelbtn" to="/travelout" active-class="activeBtn"><b>В ЧУЖБИНА</b></router-link>
                     <br>
                     <small class="font-italic text-secondary">кликнете, за да изберете</small>
-                    <h4 class="mt-2 text-left">Предложения в страната</h4>
+                    <h4 class="mt-2 text-left">Предложения в {{travel}}</h4>
                 </div>
 
 
@@ -33,6 +33,7 @@
           return {
               objects:{},
               active:false,
+              travel:'',
           }
         },
         computed:{
@@ -40,7 +41,13 @@
                 return this.$store.getters.getIsAdmin;
             },
             isTravel(){
-                if(this.comp==='TravelBulgaria'){
+                if(this.comp==='TravelBulgaria'||this.comp==='TravelOutside'){
+                    if(this.comp==='TravelOutside'){
+                        this.travel='чужбина';
+                    }
+                    else {
+                        this.travel='страната';
+                    }
                     return true;
                 }
                 return false;
@@ -57,6 +64,9 @@
                 else if(this.comp==='TravelBulgaria'){
                     this.$router.push('/travelbg/create');
                 }
+                else if(this.comp==='TravelOutside'){
+                    this.$router.push('/travelout/create');
+                }
 
             },
            getObjects(page=1){
@@ -67,6 +77,16 @@
                }
                else if(this.comp==='Advice'){
                    axios.get('/api/advices?page='+page)
+                       .then(res=>(this.objects=res.data))
+                       .catch(err=>console.log(err.response.data));
+               }
+               else if(this.comp==='TravelBulgaria'){
+                   axios.get('/api/travelbg?page='+page)
+                       .then(res=>(this.objects=res.data))
+                       .catch(err=>console.log(err.response.data));
+               }
+               else if(this.comp==='TravelOutside'){
+                   axios.get('/api/travelout?page='+page)
                        .then(res=>(this.objects=res.data))
                        .catch(err=>console.log(err.response.data));
                }

@@ -4,17 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Travels;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class TravelsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check.admin',['except'=>['index','show']]);
+        $this->middleware('jwt.verify',['except'=>['index','show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Travels $travels
+     * @return void
      */
     public function index(Travels $travels)
     {
-
+        return $travels->latest()->paginate(3);
     }
 
     /**
@@ -24,7 +32,7 @@ class TravelsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,9 +41,11 @@ class TravelsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Travels $travels,Request $request)
     {
-        //
+        $request['slug']=$request->title;
+        $travels->create($request->all());
+        return \response('Created',Response::HTTP_ACCEPTED);
     }
 
     /**

@@ -5,11 +5,12 @@
 <script>
     import Show from '../templates/Show'
     export default {
+        name: "ShowAdvice",
         data(){
             return {
-                comp:'TravelBulgaria',
+                comp:'TravelOutside',
                 title:'Екскурзии',
-                createBtn:'ДОБАВИ НОВА ЕКСКУРЗИЯ-БЪЛГАРИЯ'
+                createBtn:'ДОБАВИ НОВА ЕКСКУРЗИЯ-ЧУЖБИНА'
             }
         },
         components:{

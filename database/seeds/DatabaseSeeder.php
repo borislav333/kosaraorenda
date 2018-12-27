@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         factory(\App\User::class,2)->create()->each(function ($user){
             $user->advices()->saveMany(factory(\App\Advices::class,3)->make());
             $user->events()->saveMany(factory(\App\Events::class,3)->make());
-
+            $user->travels()->saveMany(factory(\App\Travels::class,3)->make());
         });
 
 

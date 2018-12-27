@@ -16,9 +16,10 @@ class CreateTravelsTable extends Migration
         Schema::create('travels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug');
-            $table->string('name');
+            $table->string('title');
             $table->text('body');
             $table->string('country');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }

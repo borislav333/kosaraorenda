@@ -49,7 +49,7 @@
                     title:'',
                     body:'',
                     user_id:6,
-                    slug:''
+                    slug:'',
                 },
                 editMode:false,
             }
@@ -61,6 +61,14 @@
                 }
                 else if(this.comp==='Advice'){
                     axios.post('/api/advices/create',this.form).then(res=>this.$router.push('/advices')).catch(err=>console.log(err.response.data));
+                }
+                else if(this.comp==='TravelBulgaria'){
+                    this.form.country='bg';
+                    axios.post('/api/travels/create',this.form).then(res=>console.log(res)).catch(err=>console.log(err.response.data));
+                }
+                else if(this.comp==='TravelOutside'){
+                    this.form.country='out';
+                    axios.post('/api/travels/create',this.form).then(res=>console.log(res)).catch(err=>console.log(err.response.data));
                 }
 
             },

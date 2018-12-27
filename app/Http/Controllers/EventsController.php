@@ -34,7 +34,7 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Events $events,Request $request)
+    public function store(Events $events,Request $request): \Illuminate\Http\Response
     {
         $request['slug']=str_slug($request->title);
         $events->create($request->all());

@@ -19,6 +19,10 @@ import CreateTravelBg from '../components/TravelBulgaria/CreateTravelBg.vue'
 import EditTravelBg from '../components/TravelBulgaria/EditTravelBg.vue'
 import ShowPostTravelBg from '../components/TravelBulgaria/ShowPostTravelBg.vue'
 import ShowTravelBg from '../components/TravelBulgaria/ShowTravelBg.vue'
+import CreateTravelOut from '../components/TravelOutside/CreateTravelOut.vue'
+import EditTravelOut from '../components/TravelOutside/EditTravelOut.vue'
+import ShowPostTravelOut from '../components/TravelOutside/ShowPostTravelOut.vue'
+import ShowTravelOut from '../components/TravelOutside/ShowTravelOut.vue'
 import Login from '../components/Auth/Login.vue'
 
 const router = new VueRouter({
@@ -113,6 +117,27 @@ const router = new VueRouter({
         {
             path: '/travelbg/post/:show',
             component:ShowPostTravelBg,
+
+        },
+
+        {
+            path: '/travelout',
+            component:ShowTravelOut,
+
+        },
+        {
+            path: '/travelout/create',
+            component:CreateTravelOut,
+
+        },
+        {
+            path: '/travelout/:show',
+            component:EditTravelOut,
+
+        },
+        {
+            path: '/travelout/post/:show',
+            component:ShowPostTravelOut,
 
         },
         {
