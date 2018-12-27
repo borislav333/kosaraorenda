@@ -1,0 +1,163 @@
+<template>
+    <div>
+        <div class="container mt-4 col-12 col-md-11 col-lg-10" id="foruscontainer" style="">
+            <div class="text-center w-100 " id="forus-menu" ref="forusMenu" style="">
+                <ul class="navbar-nav navbar-expand d-inline d-md-inline-flex" style="" ref="ul">
+
+                    <li v-for="(item,index) in sideMenu"  :key="index" class="d-block " @click="click">
+                        <a href="" class="nav-link"
+                           v-scroll-to="{
+     el: '#h4-'+index,
+     container: 'body',
+     offset: offset,
+ }">{{item.text}}</a>
+                    </li>
+
+                </ul>
+                <!--<router-view>
+
+                </router-view>-->
+            </div>
+            <div class="col-11 col-lg-8 m-auto" id="forus-content">
+                <p id="forus-p" class="p-3">
+                    <b>„ Косара Оренда “</b> ЕООД включва две динамично развиващи се направления:
+                    пътешествия и опознаване на България и връщане и напомняне на българина
+                    за неговите корени, древна история, бит и традиции.
+                </p>
+                <h4 class="text-center font-weight-bold" style="" id="h4-0">ЗАЩО КОСАРА? ЗАЩО ОРЕНДА?</h4>
+                <p>
+                    <b>Косара</b> е името на една велика жена от рода <b>Дуло</b> от времето на <b>Аспарух</b>, която е живяла на Мадара,
+                    личност за която историята мълчи.
+                    <b>Оренда</b> – Водач от небето, който следи и направлява специалните дела на човека на земята
+                    според речника на Спас Мавров или Оренда означава знание, път и закон. <b>ОРЕНДА</b> е древно знание,
+                    свързано с Българите, старите Руни и Глаголицата. <b>Оренда</b> е Духовен път, Практика, Концентрирано
+                    намерение за щастие, свързване със същността ни от Светлина, защото българите според старите писания са богоизбран народ.
+
+                </p>
+                <h4 class="text-center font-weight-bold" style="" id="h4-1">НАШАТА ЦЕЛ</h4>
+                <p>
+                    Целта на фирмата е да помогне на <b>БЪЛГАРИНА</b> да осъзнае националното ни богатство:
+                    красива природа, да научи истината за своята история, за славните ни деди и събития.
+                    Да завоюваме лидерски позиции в сърцата на <b>БЪЛГАРИТЕ</b> и да ги обединим като един народ и една нация.
+
+                </p>
+                <h4 class="text-center font-weight-bold" style="" id="h4-2">НАШАТА МИСИЯ</h4>
+                <p>
+                    Чрез разнообразни пътувания на територията на <b>България</b> и организиране на мероприятия и
+                    събития да помогнем на всеки, който се чувства Българин да научи за силата на духа на един
+                    древен народ и да се научи да цени всичко българско и родно .</p>
+                         <h4 class="text-center font-weight-bold" style="" id="h4-3">НАШАТА ИСТОРИЯ НАКРАТКО</h4>
+                <p>
+                    „Косара Оренда“ се ражда през 2018 година като началото на дейността на фирмата е поставено на 13.04.2018г.,
+                    – датата на която е поставено началото на Богомилството в българската история, но като година е по
+                    времето на Цар Петър и Княз Боян. Условията тогава и сега не са били цветущи, общото е забравата на
+                    българското и пренебрегване на българското в името на чуждопоклоничество .
+                    Косара е лицензиран туроператор с лиценз № РК – 01 – 7907, издаден на 30.08.2018 г.
+                    На българският туристически пазар е от 2018 г.
+
+                </p>
+
+
+                    <ul>
+                <li>Организиране на мероприятия и събития свързано с българските традиции, история и култура;</li>
+                <li>Организиране на екскурзии на територията на България;</li>
+                <li>обучения в алтернативни методи и техники за лечения;</li>
+                <li>ръчни изработки;</li>
+                <li>екскурзоводско обслужване</li>
+                     </ul>
+                <p class="font-italic" id="friends">
+                    Скъпи приятели ще  се радваме  да Ви спечелим за свой доверен и коректен партньор
+                и установим с Вас дългогодишно сътрудничество.
+
+                    А на всички наши потенциални клиенти бихме казали:
+                    "Огледайте се и опознайте България, своята история и култура, с радост ще бъдем до
+                Вас в това необикновенно приключение – пътешествие.Ние сме необикновен народ. Доверете ни се и ние
+                ще бъдем до Вас и ще Ви помогнем да го преживеете и опознаете!"
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "AppForUs",
+        data(){
+            return{
+                sideMenu:[{text:'Защо Косара? Защо Оренда?'},{text:'Нашата цел',}
+                ,{text:'Нашата мисия'},{text:'Нашата история накратко',}],
+               offset:-115,
+            }
+        },
+        methods:{
+            click(){
+
+            }
+        },
+        mounted(){
+            let forusMenu=this.$refs.forusMenu.clientHeight;
+            //alert(forusMenu)
+            if(forusMenu>70){
+
+                //this.offset=1;
+            }
+            if(forusMenu>43 && forusMenu<=70){
+                // this.offset+=(ul-80);
+            }
+
+
+
+        },
+        created(){
+            /*let forusMenu=this.$refs.forusMenu.clientHeight;
+            alert(forusMenu)
+            if(forusMenu>70){
+
+                //this.offset=1;
+            }
+            if(forusMenu>43 && forusMenu<=70){
+               // this.offset+=(ul-80);
+            }*/
+        }
+    }
+</script>
+
+<style scoped>
+    #foruscontainer{
+        border:4px solid #E1BE60;
+        border-radius: 2px;
+        background-image:url("../images/4.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+    #forus-content{
+        font-size: 17px;
+        background-color: white;
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    }
+    #forus-menu{
+        background-color: #f4f4f4;
+        border:4px solid grey;
+        border-radius: 5px;
+
+    }
+    #forus-menu>ul>li>a{
+        color:black;
+        font-size:17px;
+        padding-left:20px;
+        font-style: italic;
+    }
+    h4{
+        color:#AB5029;
+    }
+    #friends{
+        font-size: 18px;
+    }
+</style>
