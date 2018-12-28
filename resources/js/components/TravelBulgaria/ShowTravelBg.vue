@@ -5,6 +5,7 @@
 <script>
     import Show from '../templates/Show'
     export default {
+        name:'ShowTravelBg',
         data(){
             return {
                 comp:'TravelBulgaria',

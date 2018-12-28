@@ -81,9 +81,9 @@
                        .catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='TravelBulgaria'){
-                   axios.get('/api/travelbg?page='+page)
+                   axios.get('/api/travels?page='+page)
                        .then(res=>(this.objects=res.data))
-                       .catch(err=>console.log(err.response.data));
+                       .catch(err=>console.log(err.response.data.error));
                }
                else if(this.comp==='TravelOutside'){
                    axios.get('/api/travelout?page='+page)

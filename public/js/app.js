@@ -57426,10 +57426,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     return console.log(err.response.data);
                 });
             } else if (this.comp === 'TravelBulgaria') {
-                axios.get('/api/travelbg?page=' + page).then(function (res) {
+                axios.get('/api/travels?page=' + page).then(function (res) {
                     return _this.objects = res.data;
                 }).catch(function (err) {
-                    return console.log(err.response.data);
+                    return console.log(err.response.data.error);
                 });
             } else if (this.comp === 'TravelOutside') {
                 axios.get('/api/travelout?page=' + page).then(function (res) {
@@ -57548,7 +57548,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -57613,7 +57613,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return '/events/post/' + this.obj.slug;
             } else if (this.comp === 'Advice') {
                 return '/advices/post/' + this.obj.slug;
+            } else if (this.comp === 'TravelBulgaria') {
+                return '/travelbg/post/' + this.obj.slug;
+            } else if (this.comp === 'TravelOutside') {
+                return '/travelout/post/' + this.obj.slug;
             }
+
+            /*
+            else if(this.comp==='TravelBulgaria'){
+                return '/travels/post/'+this.obj.slug;
+            }*/
         }
     },
     methods: {
@@ -57625,6 +57634,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.$router.push({ path: '/events/' + this.obj.slug });
             } else if (this.comp === 'Advice') {
                 this.$router.push({ path: '/advices/' + this.obj.slug });
+            } else if (this.comp === 'TravelBulgaria') {
+                this.$router.push({ path: '/travelbg/' + this.obj.slug });
+            } else if (this.comp === 'TravelOutside') {
+                this.$router.push({ path: '/travelout/' + this.obj.slug });
             }
         },
         deleteObj: function deleteObj() {
@@ -57639,6 +57652,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     });
                 } else if (this.comp === 'Advice') {
                     axios.delete('/api/advices/' + this.obj.slug).then(function (res) {
+                        _this.$parent.deleteObject(_this.index);
+                    }).catch(function (err) {
+                        return console.log(err);
+                    });
+                } else if (this.comp === 'TravelBulgaria' || this.comp === 'TravelOutside') {
+                    axios.delete('/api/travels/' + this.obj.slug).then(function (res) {
                         _this.$parent.deleteObject(_this.index);
                     }).catch(function (err) {
                         return console.log(err);
@@ -58180,14 +58199,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             } else if (this.comp === 'TravelBulgaria') {
                 this.form.country = 'bg';
                 axios.post('/api/travels/create', this.form).then(function (res) {
-                    return console.log(res);
+                    return _this.$router.push('/travelbg');
                 }).catch(function (err) {
                     return console.log(err.response.data);
                 });
             } else if (this.comp === 'TravelOutside') {
                 this.form.country = 'out';
                 axios.post('/api/travels/create', this.form).then(function (res) {
-                    return console.log(res);
+                    return _this.$router.push('/travelout');
                 }).catch(function (err) {
                     return console.log(err.response.data);
                 });
@@ -58804,6 +58823,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }).catch(function (err) {
                     return console.log(err.response.data.error);
                 });
+            } else if (this.comp === 'TravelBulgaria') {
+                axios({
+                    method: 'patch',
+                    url: '/api/travels/' + this.object.slug,
+                    data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id, country: 'bg' },
+                    headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+                }).then(function (res) {
+                    _this.$router.push('/travelbg');
+                }).catch(function (err) {
+                    return console.log(err.response.data.error);
+                });
+            } else if (this.comp === 'TravelOutside') {
+                axios({
+                    method: 'patch',
+                    url: '/api/travels/' + this.object.slug,
+                    data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id, country: 'out' },
+                    headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
+                }).then(function (res) {
+                    _this.$router.push('/travelout');
+                }).catch(function (err) {
+                    return console.log(err.response.data.error);
+                });
             }
 
             /* axios.patch('/api/events/'+this.event.slug,{title:this.event.title,body:this.event.body,user_id:this.event.user_id})
@@ -58823,6 +58864,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         } else if (this.comp === 'Advice') {
             axios.get('/api/advices/' + slug).then(function (res) {
+                _this2.object = res.data.data;
+            }).catch(function (err) {
+                return console.log(err.response.data);
+            });
+        } else if (this.comp === 'TravelBulgaria') {
+            axios.get('/api/travels/' + slug).then(function (res) {
+                _this2.object = res.data.data;
+            }).catch(function (err) {
+                return console.log(err.response.data);
+            });
+        } else if (this.comp === 'TravelOutside') {
+            axios.get('/api/travels/' + slug).then(function (res) {
                 _this2.object = res.data.data;
             }).catch(function (err) {
                 return console.log(err.response.data);
@@ -59551,6 +59604,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }).catch(function (err) {
                 return console.log(err.response.data);
             });
+        } else if (this.comp === 'TravelBulgaria' || this.comp === 'TravelOutside') {
+            axios.get('/api/travels/' + slug).then(function (res) {
+                _this.object = res.data.data;
+            }).catch(function (err) {
+                return console.log(err);
+            });
         }
     }
 });
@@ -60260,7 +60319,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -60280,15 +60339,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      comp: 'TravelBulgaria'
-    };
-  },
+    name: 'ShowPostTravelBg',
+    data: function data() {
+        return {
+            comp: 'TravelBulgaria'
+        };
+    },
 
-  components: {
-    'show-post': __WEBPACK_IMPORTED_MODULE_0__templates_ShowPost_vue___default.a
-  }
+    components: {
+        'show-post': __WEBPACK_IMPORTED_MODULE_0__templates_ShowPost_vue___default.a
+    }
 });
 
 /***/ }),
@@ -60397,7 +60457,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -60417,6 +60477,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'ShowTravelBg',
     data: function data() {
         return {
             comp: 'TravelBulgaria',

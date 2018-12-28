@@ -25,8 +25,10 @@ Route::apiResource('/advices','AdvicesController')->except(['create']);
 Route::apiResource('/travels','TravelsController')->except(['create']);
 Route::post('/advices/create','AdvicesController@store');
 Route::post('/events/create','EventsController@store');
-Route::post('/travels/create','TravelsController@store');/*
-
+Route::post('/travels/create','TravelsController@store');
+Route::get('/travelout','TravelsController@indexOut');
+/*
+Route::get('/travels/create','TravelsController@store');
 Route::post('/events/post/{show}','EventsController@show');
 Route::post('/advices/post/{show}','AdvicesController@show');*/
 Route::group([

@@ -5,6 +5,7 @@
 <script>
     import ShowPost from '../templates/ShowPost.vue'
     export default {
+        name:'ShowPostTravelBg',
         data(){
           return{
               comp:'TravelBulgaria'

@@ -77,6 +77,22 @@
                         headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
                     }).then(res=>{this.$router.push('/advices')}).catch(err=>console.log(err.response.data.error));
                 }
+                else if(this.comp==='TravelBulgaria'){
+                    axios({
+                        method:'patch',
+                        url:'/api/travels/'+this.object.slug,
+                        data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id,country:'bg'},
+                        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
+                    }).then(res=>{this.$router.push('/travelbg')}).catch(err=>console.log(err.response.data.error));
+                }
+                else if(this.comp==='TravelOutside'){
+                    axios({
+                        method:'patch',
+                        url:'/api/travels/'+this.object.slug,
+                        data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id,country:'out'},
+                        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
+                    }).then(res=>{this.$router.push('/travelout')}).catch(err=>console.log(err.response.data.error));
+                }
 
                 /* axios.patch('/api/events/'+this.event.slug,{title:this.event.title,body:this.event.body,user_id:this.event.user_id})
                      .then(res=>{this.$router.push('/events')}).catch(err=>console.log(err.response.data.error));*/
@@ -95,6 +111,12 @@
             }
             else if(this.comp==='Advice'){
                 axios.get('/api/advices/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
+            }
+            else if(this.comp==='TravelBulgaria'){
+                axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
+            }
+            else if(this.comp==='TravelOutside'){
+                axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
             }
         },
         components: {

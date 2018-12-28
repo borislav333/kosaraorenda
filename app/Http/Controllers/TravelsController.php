@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TravelsResource;
 use App\Travels;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -18,11 +19,14 @@ class TravelsController extends Controller
      * Display a listing of the resource.
      *
      * @param Travels $travels
-     * @return void
+     * @param string $country
      */
     public function index(Travels $travels)
     {
-        return $travels->latest()->paginate(3);
+            return TravelsResource::collection($travels->latest()->where(['country'=>'bg'])->paginate(3));
+    }
+    public function indexOut(Travels $travels){
+        return TravelsResource::collection($travels->latest()->where(['country'=>'out'])->paginate(3));
     }
 
     /**
@@ -43,7 +47,7 @@ class TravelsController extends Controller
      */
     public function store(Travels $travels,Request $request)
     {
-        $request['slug']=$request->title;
+        $request['slug']=str_slug($request->title);
         $travels->create($request->all());
         return \response('Created',Response::HTTP_ACCEPTED);
     }
@@ -54,9 +58,9 @@ class TravelsController extends Controller
      * @param  \App\Travels  $travels
      * @return \Illuminate\Http\Response
      */
-    public function show(Travels $travels)
+    public function show(Travels $travels,$slug)
     {
-        //
+        return new TravelsResource($travels->where('slug',$slug)->first());
     }
 
     /**
@@ -77,9 +81,10 @@ class TravelsController extends Controller
      * @param  \App\Travels  $travels
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Travels $travels)
+    public function update(Request $request, Travels $travels,$slug)
     {
-        //
+        $request['slug']=str_slug($request->title);
+        $travels->where(['slug'=>$slug])->first()->update($request->all());
     }
 
     /**
@@ -88,8 +93,8 @@ class TravelsController extends Controller
      * @param  \App\Travels  $travels
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Travels $travels)
+    public function destroy(Travels $travels,$slug)
     {
-        //
+        $travels->where('slug',$slug)->delete();
     }
 }

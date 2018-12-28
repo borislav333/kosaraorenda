@@ -52,6 +52,17 @@
                 else if(this.comp==='Advice'){
                     return '/advices/post/'+this.obj.slug;
                 }
+                else if(this.comp==='TravelBulgaria'){
+                    return '/travelbg/post/'+this.obj.slug;
+                }
+                else if(this.comp==='TravelOutside'){
+                    return '/travelout/post/'+this.obj.slug;
+                }
+
+                /*
+                else if(this.comp==='TravelBulgaria'){
+                    return '/travels/post/'+this.obj.slug;
+                }*/
             }
 
         },
@@ -67,6 +78,12 @@
                 else if(this.comp==='Advice'){
                     this.$router.push({path:'/advices/'+this.obj.slug});
                 }
+                else if(this.comp==='TravelBulgaria'){
+                    this.$router.push({path:'/travelbg/'+this.obj.slug});
+                }
+                else if(this.comp==='TravelOutside'){
+                    this.$router.push({path:'/travelout/'+this.obj.slug});
+                }
             },
             deleteObj(){
                 if(confirm('Сигурни ли сте че искате да се изтриете: '+this.obj.title+'?')){
@@ -76,6 +93,10 @@
                     }
                     else if(this.comp==='Advice'){
                         axios.delete('/api/advices/'+this.obj.slug)
+                            .then(res=>{this.$parent.deleteObject(this.index)}).catch(err=>console.log(err));
+                    }
+                    else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside'){
+                        axios.delete('/api/travels/'+this.obj.slug)
                             .then(res=>{this.$parent.deleteObject(this.index)}).catch(err=>console.log(err));
                     }
                 }

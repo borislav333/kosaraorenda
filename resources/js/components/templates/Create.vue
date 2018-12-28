@@ -64,11 +64,11 @@
                 }
                 else if(this.comp==='TravelBulgaria'){
                     this.form.country='bg';
-                    axios.post('/api/travels/create',this.form).then(res=>console.log(res)).catch(err=>console.log(err.response.data));
+                    axios.post('/api/travels/create',this.form).then(res=>this.$router.push('/travelbg')).catch(err=>console.log(err.response.data));
                 }
                 else if(this.comp==='TravelOutside'){
                     this.form.country='out';
-                    axios.post('/api/travels/create',this.form).then(res=>console.log(res)).catch(err=>console.log(err.response.data));
+                    axios.post('/api/travels/create',this.form).then(res=>this.$router.push('/travelout')).catch(err=>console.log(err.response.data));
                 }
 
             },

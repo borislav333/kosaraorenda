@@ -36,6 +36,9 @@
             else if(this.comp==='Advice'){
                 axios.get('/api/advices/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
             }
+            else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside' ){
+                axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err));
+            }
 
         }
     }
