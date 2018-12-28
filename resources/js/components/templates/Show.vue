@@ -109,6 +109,9 @@
             else if(this.comp==='TravelBulgaria'){
                 document.getElementById('objects-container').style.backgroundImage = "url('../images/bg2.jpg')";
             }
+            else if(this.comp==='TravelOutside'){
+                document.getElementById('objects-container').style.backgroundImage = "url('../images/bul.jpg')";
+            }
 
 
         },
