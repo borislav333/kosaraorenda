@@ -13,8 +13,6 @@ class EventsController extends BaseCrudController
     {
         parent::__construct();
         $this->model='Events';
-        $this->obj='App\Events';
     }
-
 
 }
