@@ -24,7 +24,7 @@ Route::apiResource('/events','EventsController')->except(['create']);
 Route::apiResource('/advices','AdvicesController')->except(['create']);
 Route::apiResource('/travels','TravelsController')->except(['create']);
 Route::post('/advices/create','AdvicesController@store');
-Route::post('/events/create','EventsController@store');
+Route::post('/events/create','EventsController@store')->middleware('check.admin');
 Route::post('/travels/create','TravelsController@store');
 Route::get('/travelout','TravelsController@indexOut');
 /*

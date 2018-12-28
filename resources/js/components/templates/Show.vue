@@ -106,10 +106,15 @@
             else if(this.comp==='Advice'){
                 document.getElementById('objects-container').style.backgroundImage = "url('../images/22.jpeg')";
             }
+            else if(this.comp==='TravelBulgaria'){
+                document.getElementById('objects-container').style.backgroundImage = "url('../images/bg2.jpg')";
+            }
+
 
         },
         created(){
             this.getObjects();
+
 
         },
         components:{

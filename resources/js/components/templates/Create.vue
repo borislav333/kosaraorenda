@@ -1,6 +1,13 @@
 <template>
     <div>
+
         <div class="container mt-4 col-12 col-md-11 col-lg-10 p-3" id="objects-container" style="">
+            <div v-if="errors">
+                <div class="alert alert-danger" role="alert" v-for="(val,index) in errors">
+                    {{val}}
+                </div>
+            </div>
+
             <div class="col-11 col-lg-8 m-auto" id="objects-content" style="">
                 <div style="" class="text-center bg-primary text-white"><h3 class="mt-auto">{{add}}</h3></div>
 
@@ -48,28 +55,62 @@
                 form:{
                     title:'',
                     body:'',
-                    user_id:6,
+                    user_id:this.$store.getters.getId,
                     slug:'',
                 },
                 editMode:false,
+                errors:null,
+                success:{},
             }
         },
+        computed:{
+            isAdmin(){
+                return this.$store.getters.getIsAdmin;
+            },
+
+        },
         methods:{
+            checkError(val){
+                this.errors=val;
+                console.log(val)
+            },
             create(){
-                if(this.comp==='Event'){
-                    axios.post('/api/events/create',this.form).then(res=>this.$router.push('/events')).catch(err=>console.log(err.response.data));
+
+                if(this.isAdmin){
+                    if(this.comp==='Event'){
+                        axios.post('/api/events/create',this.form).then(res=>{
+                            this.errors=null;
+                            this.$router.push('/events');
+                        }).catch(err=>{
+                            if(err.response.data.errors){
+                                this.checkError(err.response.data.errors);
+                                scroll(0,0)
+                            }
+                        });
+                    }
+                    else if(this.comp==='Advice'){
+                        axios.post('/api/advices/create',this.form).then(res=>
+                        {
+                            this.checkError(res.data.errors);
+                            this.$router.push('/advices')
+                        }).catch(err=>console.log(err.response.data));
+                    }
+                    else if(this.comp==='TravelBulgaria'){
+                        this.form.country='bg';
+                        axios.post('/api/travels/create',this.form).then(res=>{
+                            this.checkError(res.data.errors);
+                            this.$router.push('/travelbg')
+                        }).catch(err=>console.log(err.response.data));
+                    }
+                    else if(this.comp==='TravelOutside'){
+                        this.form.country='out';
+                        axios.post('/api/travels/create',this.form).then(res=>{
+                            this.checkError(res.data.errors);
+                            this.$router.push('/travelout')
+                        }).catch(err=>console.log(err.response.data));
+                    }
                 }
-                else if(this.comp==='Advice'){
-                    axios.post('/api/advices/create',this.form).then(res=>this.$router.push('/advices')).catch(err=>console.log(err.response.data));
-                }
-                else if(this.comp==='TravelBulgaria'){
-                    this.form.country='bg';
-                    axios.post('/api/travels/create',this.form).then(res=>this.$router.push('/travelbg')).catch(err=>console.log(err.response.data));
-                }
-                else if(this.comp==='TravelOutside'){
-                    this.form.country='out';
-                    axios.post('/api/travels/create',this.form).then(res=>this.$router.push('/travelout')).catch(err=>console.log(err.response.data));
-                }
+
 
             },
         },
@@ -77,6 +118,7 @@
             'editor': Editor // <- Important part
         },
         created(){
+
         }
     }
 </script>

@@ -57451,6 +57451,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             document.getElementById('objects-container').style.backgroundImage = "url('../images/3.jpg')";
         } else if (this.comp === 'Advice') {
             document.getElementById('objects-container').style.backgroundImage = "url('../images/22.jpeg')";
+        } else if (this.comp === 'TravelBulgaria') {
+            document.getElementById('objects-container').style.backgroundImage = "url('../images/bg2.jpg')";
         }
     },
     created: function created() {
@@ -58163,6 +58165,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -58173,43 +58182,63 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             form: {
                 title: '',
                 body: '',
-                user_id: 6,
+                user_id: this.$store.getters.getId,
                 slug: ''
             },
-            editMode: false
+            editMode: false,
+            errors: null,
+            success: {}
         };
     },
 
+    computed: {
+        isAdmin: function isAdmin() {
+            return this.$store.getters.getIsAdmin;
+        }
+    },
     methods: {
+        checkError: function checkError(val) {
+            this.errors = val;
+            console.log(val);
+        },
         create: function create() {
             var _this = this;
 
-            if (this.comp === 'Event') {
-                axios.post('/api/events/create', this.form).then(function (res) {
-                    return _this.$router.push('/events');
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
-            } else if (this.comp === 'Advice') {
-                axios.post('/api/advices/create', this.form).then(function (res) {
-                    return _this.$router.push('/advices');
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
-            } else if (this.comp === 'TravelBulgaria') {
-                this.form.country = 'bg';
-                axios.post('/api/travels/create', this.form).then(function (res) {
-                    return _this.$router.push('/travelbg');
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
-            } else if (this.comp === 'TravelOutside') {
-                this.form.country = 'out';
-                axios.post('/api/travels/create', this.form).then(function (res) {
-                    return _this.$router.push('/travelout');
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
+            if (this.isAdmin) {
+                if (this.comp === 'Event') {
+                    axios.post('/api/events/create', this.form).then(function (res) {
+                        _this.errors = null;
+                        _this.$router.push('/events');
+                    }).catch(function (err) {
+                        if (err.response.data.errors) {
+                            _this.checkError(err.response.data.errors);
+                            scroll(0, 0);
+                        }
+                    });
+                } else if (this.comp === 'Advice') {
+                    axios.post('/api/advices/create', this.form).then(function (res) {
+                        _this.checkError(res.data.errors);
+                        _this.$router.push('/advices');
+                    }).catch(function (err) {
+                        return console.log(err.response.data);
+                    });
+                } else if (this.comp === 'TravelBulgaria') {
+                    this.form.country = 'bg';
+                    axios.post('/api/travels/create', this.form).then(function (res) {
+                        _this.checkError(res.data.errors);
+                        _this.$router.push('/travelbg');
+                    }).catch(function (err) {
+                        return console.log(err.response.data);
+                    });
+                } else if (this.comp === 'TravelOutside') {
+                    this.form.country = 'out';
+                    axios.post('/api/travels/create', this.form).then(function (res) {
+                        _this.checkError(res.data.errors);
+                        _this.$router.push('/travelout');
+                    }).catch(function (err) {
+                        return console.log(err.response.data);
+                    });
+                }
             }
         }
     },
@@ -58422,6 +58451,26 @@ var render = function() {
         attrs: { id: "objects-container" }
       },
       [
+        _vm.errors
+          ? _c(
+              "div",
+              _vm._l(_vm.errors, function(val, index) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "alert alert-danger",
+                    attrs: { role: "alert" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                  " + _vm._s(val) + "\n              "
+                    )
+                  ]
+                )
+              })
+            )
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "div",
           {
@@ -61838,7 +61887,8 @@ var getters = {
 "use strict";
 var state = {
     isAdmin: false,
-    isValidToken: false
+    isValidToken: false,
+    id: null
 };
 
 var mutations = {
@@ -61856,6 +61906,9 @@ var mutations = {
         } else {
             state.isValidToken = false;
         }
+    },
+    setId: function setId(state, value) {
+        state.id = value;
     }
 };
 
@@ -61878,6 +61931,8 @@ var actions = {
                     url: '/api/auth/me',
                     headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
                 }).then(function (res) {
+                    console.log(res.data.id);
+                    commit('setId', res.data.id);
                     dispatch('isAdmin', res.data.isAdmin);
                 }).catch(function (err) {
                     return console.log(err);
@@ -61893,6 +61948,9 @@ var getters = {
     },
     getIsValidToken: function getIsValidToken(state) {
         return state.isValidToken;
+    },
+    getId: function getId(state) {
+        return state.id;
     }
 };
 
