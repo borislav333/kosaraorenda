@@ -60,63 +60,51 @@
 
         methods:{
 
+            updateIt(model,path=null){
+                if(path===null){
+                    path=model;
+                }
+                axios({
+                    method:'patch',
+                    url:`/api/${model}/`+this.object.slug,
+                    data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id},
+                }).then(res=>{this.$router.push(`/${path}`)}).catch(err=>console.log(err.response.data.error));
+            },
             update(){
                 if(this.comp==='Event'){
+                    this.updateIt('events');
 
-                    axios({
-                        method:'patch',
-                        url:'/api/events/'+this.object.slug,
-                        data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id},
-                    }).then(res=>{this.$router.push('/events')}).catch(err=>console.log(err.response.data.error));
                 }
                 else if(this.comp==='Advice'){
-                    axios({
-                        method:'patch',
-                        url:'/api/advices/'+this.object.slug,
-                        data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id},
-                        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
-                    }).then(res=>{this.$router.push('/advices')}).catch(err=>console.log(err.response.data.error));
+                    this.updateIt('advices');
                 }
                 else if(this.comp==='TravelBulgaria'){
-                    axios({
-                        method:'patch',
-                        url:'/api/travels/'+this.object.slug,
-                        data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id,country:'bg'},
-                        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
-                    }).then(res=>{this.$router.push('/travelbg')}).catch(err=>console.log(err.response.data.error));
+                    this.updateIt('travels','travelbg');
                 }
                 else if(this.comp==='TravelOutside'){
-                    axios({
-                        method:'patch',
-                        url:'/api/travels/'+this.object.slug,
-                        data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id,country:'out'},
-                        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')},
-                    }).then(res=>{this.$router.push('/travelout')}).catch(err=>console.log(err.response.data.error));
+                    this.updateIt('travels','travelout');
                 }
 
-                /* axios.patch('/api/events/'+this.event.slug,{title:this.event.title,body:this.event.body,user_id:this.event.user_id})
-                     .then(res=>{this.$router.push('/events')}).catch(err=>console.log(err.response.data.error));*/
 
+            },
+            editIt(model){
+                let slug=this.$route.params.show;
+                axios.get(`/api/${model}/${slug}`).then(res=>this.object=res.data.data).catch(err=>console.log(err.response.data));
             },
 
         },
-        updated(){
 
 
-        },
         created(){
-            let slug=this.$route.params.show;
+
             if(this.comp==='Event'){
-                axios.get('/api/events/'+slug).then(res=>this.object=res.data.data).catch(err=>console.log(err));
+               this.editIt('events');
             }
             else if(this.comp==='Advice'){
-                axios.get('/api/advices/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
+                this.editIt('advices');
             }
-            else if(this.comp==='TravelBulgaria'){
-                axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
-            }
-            else if(this.comp==='TravelOutside'){
-                axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err.response.data));
+            else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside'){
+                this.editIt('travels');
             }
         },
         components: {

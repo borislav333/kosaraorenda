@@ -60,7 +60,6 @@
                 },
                 editMode:false,
                 errors:null,
-                success:{},
             }
         },
         computed:{
@@ -74,40 +73,38 @@
                 this.errors=val;
                 console.log(val)
             },
+            createRequest(model,path=null){
+                if(path===null){
+                    path=model;
+                }
+                console.log(path);
+                axios.post(`/api/${model}/create`,this.form).then(res=>{
+                    this.errors=null;
+                    this.$router.push(`/${path}`);
+                }).catch(err=>{
+                    console.log(err);
+                    if(err.response.data.errors){
+                        this.checkError(err.response.data.errors);
+                        scroll(0,0)
+                    }
+                });
+            },
             create(){
 
                 if(this.isAdmin){
                     if(this.comp==='Event'){
-                        axios.post('/api/events/create',this.form).then(res=>{
-                            this.errors=null;
-                            this.$router.push('/events');
-                        }).catch(err=>{
-                            if(err.response.data.errors){
-                                this.checkError(err.response.data.errors);
-                                scroll(0,0)
-                            }
-                        });
+                        this.createRequest('events');
                     }
                     else if(this.comp==='Advice'){
-                        axios.post('/api/advices/create',this.form).then(res=>
-                        {
-                            this.checkError(res.data.errors);
-                            this.$router.push('/advices')
-                        }).catch(err=>console.log(err.response.data));
+                        this.createRequest('advices');
                     }
                     else if(this.comp==='TravelBulgaria'){
                         this.form.country='bg';
-                        axios.post('/api/travels/create',this.form).then(res=>{
-                            this.checkError(res.data.errors);
-                            this.$router.push('/travelbg')
-                        }).catch(err=>console.log(err.response.data));
+                        this.createRequest('travels','travelbg');
                     }
                     else if(this.comp==='TravelOutside'){
                         this.form.country='out';
-                        axios.post('/api/travels/create',this.form).then(res=>{
-                            this.checkError(res.data.errors);
-                            this.$router.push('/travelout')
-                        }).catch(err=>console.log(err.response.data));
+                        this.createRequest('travels','travelout');
                     }
                 }
 

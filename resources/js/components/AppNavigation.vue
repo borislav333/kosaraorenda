@@ -30,9 +30,6 @@
                     <router-link v-for="(item,index) in menu" tag="li" :to="item.path" class="nav-item"
                                  active-class="active" :key="index" :id="item.id"  exact>
                         <a class="nav-link" href="#"><span>{{item.text}}</span></a>
-                        <!--<ul v-if="item.id==='steps'" class="navbar-nav dropdown-ul" style="background-color: white;border:1px solid black;" >
-                            <router-link :to="'/test'" tag="li" class="nav-item" id="dropdown-item-1">Daddad</router-link>
-                        </ul>-->
                     </router-link>
                 </ul>
             </div>

@@ -29,25 +29,7 @@
             'app-navigation':AppNavigation,
             'app-logo-carousel':AppLogoCarousel,
         },
-        computed:{
-        },
-        methods:{
-        },
-        updated(){
-        },
-        mounted(){
-
-
-        },
-        destroy(){
-        },
         created(){
-            /*this.$nextTick(function() {
-                window.addEventListener('resize', function(){
-                    this.nav=document.getElementById('fullnav').clientHeight;
-                })
-
-            })*/
             this.$store.dispatch('isLogged');
         }
     }

@@ -23,11 +23,6 @@
             'app-documents':AppDocuments,
         },
         created(){
-            /*this.$nextTick(function() {
-                window.addEventListener('resize',function () {
-                    console.log('resize');
-                });
-            });*/
         }
     }
 </script>

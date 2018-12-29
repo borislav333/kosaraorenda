@@ -35,7 +35,6 @@
             }
         },
         mounted(){
-            //console.log(this.$refs.imgDoc.clientWidth)
             this.$refs.absoluteDiv.style.width=this.$refs.imgDoc.clientWidth+1+'px';
             this.$refs.absoluteDiv2.style.width=this.$refs.imgDoc2.clientWidth+1+'px';
 

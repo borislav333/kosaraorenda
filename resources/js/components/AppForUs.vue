@@ -92,36 +92,6 @@
                offset:-115,
             }
         },
-        methods:{
-            click(){
-
-            }
-        },
-        mounted(){
-            let forusMenu=this.$refs.forusMenu.clientHeight;
-            //alert(forusMenu)
-            if(forusMenu>70){
-
-                //this.offset=1;
-            }
-            if(forusMenu>43 && forusMenu<=70){
-                // this.offset+=(ul-80);
-            }
-
-
-
-        },
-        created(){
-            /*let forusMenu=this.$refs.forusMenu.clientHeight;
-            alert(forusMenu)
-            if(forusMenu>70){
-
-                //this.offset=1;
-            }
-            if(forusMenu>43 && forusMenu<=70){
-               // this.offset+=(ul-80);
-            }*/
-        }
     }
 </script>
 

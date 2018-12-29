@@ -69,48 +69,46 @@
                 }
 
             },
-           getObjects(page=1){
+            getThem(model,page=1){
+                axios.get(`/api/${model}?page=`+page)
+                    .then(res=>(this.objects=res.data))
+                    .catch(err=>console.log(err.response.data));
+            },
+           getObjects(){
                if(this.comp==='Event'){
-                   axios.get('/api/events?page='+page)
-                       .then(res=>(this.objects=res.data))
-                       .catch(err=>console.log(err.response.data));
+                   this.getThem('events');
                }
                else if(this.comp==='Advice'){
-                   axios.get('/api/advices?page='+page)
-                       .then(res=>(this.objects=res.data))
-                       .catch(err=>console.log(err.response.data));
+                   this.getThem('advices');
                }
                else if(this.comp==='TravelBulgaria'){
-                   axios.get('/api/travels?page='+page)
-                       .then(res=>(this.objects=res.data))
-                       .catch(err=>console.log(err.response.data.error));
+                   this.getThem('travels');
                }
                else if(this.comp==='TravelOutside'){
-                   axios.get('/api/travelout?page='+page)
-                       .then(res=>(this.objects=res.data))
-                       .catch(err=>console.log(err.response.data));
+                   this.getThem('travelout');
                }
 
            },
             deleteObject(index){
-                console.log(this.objects);
-                console.log(index);
                 this.objects.data.splice(index,1);
-                console.log(this.objects);
+            },
+            setObjectContainerImage(file){
+                document.getElementById('objects-container').style.backgroundImage = `url('../images/${file}')`;
             }
         },
         mounted(){
             if(this.comp==='Event'){
-                document.getElementById('objects-container').style.backgroundImage = "url('../images/3.jpg')";
+                this.setObjectContainerImage('3.jpg');
             }
             else if(this.comp==='Advice'){
-                document.getElementById('objects-container').style.backgroundImage = "url('../images/22.jpeg')";
+                this.setObjectContainerImage('22.jpeg');
+
             }
             else if(this.comp==='TravelBulgaria'){
-                document.getElementById('objects-container').style.backgroundImage = "url('../images/bg2.jpg')";
+                this.setObjectContainerImage('bg2.jpg');
             }
             else if(this.comp==='TravelOutside'){
-                document.getElementById('objects-container').style.backgroundImage = "url('../images/bul.jpg')";
+                this.setObjectContainerImage('bul.jpg');
             }
 
 

@@ -39,7 +39,6 @@ const actions={
                         url: '/api/auth/me',
                         headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
                     }).then(res=>{
-                        console.log(res.data.id)
                         commit('setId',res.data.id);
                         dispatch('isAdmin',res.data.isAdmin);
                     }).catch(err=>console.log(err))

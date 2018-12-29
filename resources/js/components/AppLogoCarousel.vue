@@ -82,17 +82,7 @@
 
                 if(-this.pixels>=diff*200){
                     clearInterval(a)
-                    console.log('finish')
                 }
-
-
-
-                //let diff=this.elements()-this.perPage();
-
-
-
-
-                //this.pixels-=200;
             },
 
         },

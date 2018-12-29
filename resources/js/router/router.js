@@ -4,7 +4,6 @@ Vue.use(VueRouter);
 
 import AppHome from '../components/AppHome.vue'
 import AppForUs from '../components/AppForUs.vue'
-import AppAdvices from '../components/AppAdvices.vue'
 import AppContacts from '../components/AppContacts.vue'
 import ShowEvent from '../components/Events/ShowEvent.vue'
 import CreateEvent from '../components/Events/CreateEvent.vue'
@@ -38,10 +37,6 @@ const router = new VueRouter({
             path: '/forus',
             name: 'forus',
             component: AppForUs,
-            children: [{
-                path: '/foryou',
-                component: AppAdvices
-            }, ]
 
         },
         {

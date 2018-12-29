@@ -51044,17 +51044,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         'app-navigation': __WEBPACK_IMPORTED_MODULE_0__AppNavigation_vue___default.a,
         'app-logo-carousel': __WEBPACK_IMPORTED_MODULE_1__components_AppLogoCarousel_vue___default.a
     },
-    computed: {},
-    methods: {},
-    updated: function updated() {},
-    mounted: function mounted() {},
-    destroy: function destroy() {},
     created: function created() {
-        /*this.$nextTick(function() {
-            window.addEventListener('resize', function(){
-                this.nav=document.getElementById('fullnav').clientHeight;
-            })
-         })*/
         this.$store.dispatch('isLogged');
     }
 });
@@ -51157,9 +51147,6 @@ exports.push([module.i, "\n#fullnav[data-v-4f50743a]{\n    border-top:1px solid 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -51628,13 +51615,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             if (-this.pixels >= diff * 200) {
                 clearInterval(a);
-                console.log('finish');
             }
-
-            //let diff=this.elements()-this.perPage();
-
-
-            //this.pixels-=200;
         }
     },
     mounted: function mounted() {
@@ -52389,50 +52370,47 @@ module.exports = __webpack_require__(23).polyfill();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_AppHome_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_AppHome_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_AppForUs_vue__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_AppForUs_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_AppForUs_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AppAdvices_vue__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AppAdvices_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_AppAdvices_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AppContacts_vue__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_AppContacts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_AppContacts_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Events_ShowEvent_vue__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Events_ShowEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Events_ShowEvent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Events_CreateEvent_vue__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Events_CreateEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Events_CreateEvent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Events_EditEvent_vue__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Events_EditEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Events_EditEvent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Advices_ShowAdvice_vue__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Advices_ShowAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Advices_ShowAdvice_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Advices_EditAdvice_vue__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Advices_EditAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Advices_EditAdvice_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Advices_CreateAdvice_vue__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Advices_CreateAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Advices_CreateAdvice_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_templates_ShowPost_vue__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_templates_ShowPost_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_templates_ShowPost_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Events_ShowPostEvent_vue__ = __webpack_require__(179);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Events_ShowPostEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_Events_ShowPostEvent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Advices_ShowPostAdvice_vue__ = __webpack_require__(184);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Advices_ShowPostAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_Advices_ShowPostAdvice_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_CreateTravelBg_vue__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_CreateTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_CreateTravelBg_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_EditTravelBg_vue__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_EditTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_EditTravelBg_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowPostTravelBg_vue__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowPostTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowPostTravelBg_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_TravelBulgaria_ShowTravelBg_vue__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_TravelBulgaria_ShowTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_TravelBulgaria_ShowTravelBg_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_CreateTravelOut_vue__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_CreateTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_CreateTravelOut_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_EditTravelOut_vue__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_EditTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_EditTravelOut_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowPostTravelOut_vue__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowPostTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowPostTravelOut_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_TravelOutside_ShowTravelOut_vue__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_TravelOutside_ShowTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__components_TravelOutside_ShowTravelOut_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_Auth_Login_vue__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_Auth_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23__components_Auth_Login_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AppContacts_vue__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_AppContacts_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_AppContacts_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Events_ShowEvent_vue__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Events_ShowEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_Events_ShowEvent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Events_CreateEvent_vue__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Events_CreateEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Events_CreateEvent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Events_EditEvent_vue__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Events_EditEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Events_EditEvent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Advices_ShowAdvice_vue__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Advices_ShowAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Advices_ShowAdvice_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Advices_EditAdvice_vue__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Advices_EditAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Advices_EditAdvice_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Advices_CreateAdvice_vue__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Advices_CreateAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Advices_CreateAdvice_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_templates_ShowPost_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_templates_ShowPost_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_templates_ShowPost_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Events_ShowPostEvent_vue__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Events_ShowPostEvent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Events_ShowPostEvent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Advices_ShowPostAdvice_vue__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Advices_ShowPostAdvice_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_Advices_ShowPostAdvice_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_TravelBulgaria_CreateTravelBg_vue__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_TravelBulgaria_CreateTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_TravelBulgaria_CreateTravelBg_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_EditTravelBg_vue__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_EditTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_EditTravelBg_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_ShowPostTravelBg_vue__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_ShowPostTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_ShowPostTravelBg_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowTravelBg_vue__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowTravelBg_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowTravelBg_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_TravelOutside_CreateTravelOut_vue__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_TravelOutside_CreateTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_TravelOutside_CreateTravelOut_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_EditTravelOut_vue__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_EditTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_EditTravelOut_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_ShowPostTravelOut_vue__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_ShowPostTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_ShowPostTravelOut_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowTravelOut_vue__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowTravelOut_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowTravelOut_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_Auth_Login_vue__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_Auth_Login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_22__components_Auth_Login_vue__);
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
-
 
 
 
@@ -52466,54 +52444,50 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     }, {
         path: '/forus',
         name: 'forus',
-        component: __WEBPACK_IMPORTED_MODULE_3__components_AppForUs_vue___default.a,
-        children: [{
-            path: '/foryou',
-            component: __WEBPACK_IMPORTED_MODULE_4__components_AppAdvices_vue___default.a
-        }]
+        component: __WEBPACK_IMPORTED_MODULE_3__components_AppForUs_vue___default.a
 
     }, {
         path: '/contacts',
         name: 'contacts',
-        component: __WEBPACK_IMPORTED_MODULE_5__components_AppContacts_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_4__components_AppContacts_vue___default.a
 
     }, {
         path: '/events',
-        component: __WEBPACK_IMPORTED_MODULE_6__components_Events_ShowEvent_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_5__components_Events_ShowEvent_vue___default.a
 
     }, {
         path: '/events/create',
         name: 'eventsCreate',
-        component: __WEBPACK_IMPORTED_MODULE_7__components_Events_CreateEvent_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_6__components_Events_CreateEvent_vue___default.a
 
     }, {
         path: '/events/:show',
         name: 'eventsShow',
-        component: __WEBPACK_IMPORTED_MODULE_8__components_Events_EditEvent_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_7__components_Events_EditEvent_vue___default.a
 
     }, {
         path: '/advices',
-        component: __WEBPACK_IMPORTED_MODULE_9__components_Advices_ShowAdvice_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_8__components_Advices_ShowAdvice_vue___default.a
 
     }, {
         path: '/advices/create',
         name: 'advicesCreate',
-        component: __WEBPACK_IMPORTED_MODULE_11__components_Advices_CreateAdvice_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_10__components_Advices_CreateAdvice_vue___default.a
 
     }, {
         path: '/advices/:show',
         name: 'advicesShow',
-        component: __WEBPACK_IMPORTED_MODULE_10__components_Advices_EditAdvice_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_9__components_Advices_EditAdvice_vue___default.a
 
     }, {
         path: '/events/post/:show',
         name: 'ShowPostEvent',
-        component: __WEBPACK_IMPORTED_MODULE_13__components_Events_ShowPostEvent_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_12__components_Events_ShowPostEvent_vue___default.a
 
     }, {
         path: '/advices/post/:show',
         name: 'ShowPostAdvice',
-        component: __WEBPACK_IMPORTED_MODULE_14__components_Advices_ShowPostAdvice_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_13__components_Advices_ShowPostAdvice_vue___default.a
 
     },
     /////////////////////////////////////////////////////////////////////
@@ -52521,40 +52495,40 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 
     {
         path: '/travelbg',
-        component: __WEBPACK_IMPORTED_MODULE_18__components_TravelBulgaria_ShowTravelBg_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowTravelBg_vue___default.a
 
     }, {
         path: '/travelbg/create',
-        component: __WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_CreateTravelBg_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_14__components_TravelBulgaria_CreateTravelBg_vue___default.a
 
     }, {
         path: '/travelbg/:show',
-        component: __WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_EditTravelBg_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_15__components_TravelBulgaria_EditTravelBg_vue___default.a
 
     }, {
         path: '/travelbg/post/:show',
-        component: __WEBPACK_IMPORTED_MODULE_17__components_TravelBulgaria_ShowPostTravelBg_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_16__components_TravelBulgaria_ShowPostTravelBg_vue___default.a
 
     }, {
         path: '/travelout',
-        component: __WEBPACK_IMPORTED_MODULE_22__components_TravelOutside_ShowTravelOut_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowTravelOut_vue___default.a
 
     }, {
         path: '/travelout/create',
-        component: __WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_CreateTravelOut_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_18__components_TravelOutside_CreateTravelOut_vue___default.a
 
     }, {
         path: '/travelout/:show',
-        component: __WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_EditTravelOut_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_19__components_TravelOutside_EditTravelOut_vue___default.a
 
     }, {
         path: '/travelout/post/:show',
-        component: __WEBPACK_IMPORTED_MODULE_21__components_TravelOutside_ShowPostTravelOut_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_20__components_TravelOutside_ShowPostTravelOut_vue___default.a
 
     }, {
         path: '/login',
         name: 'login',
-        component: __WEBPACK_IMPORTED_MODULE_23__components_Auth_Login_vue___default.a
+        component: __WEBPACK_IMPORTED_MODULE_22__components_Auth_Login_vue___default.a
 
     }]
 });
@@ -55313,13 +55287,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         'app-client-carousel': __WEBPACK_IMPORTED_MODULE_1__AppClientCarousel_vue___default.a,
         'app-documents': __WEBPACK_IMPORTED_MODULE_2__AppDocuments_vue___default.a
     },
-    created: function created() {
-        /*this.$nextTick(function() {
-            window.addEventListener('resize',function () {
-                console.log('resize');
-            });
-        });*/
-    }
+    created: function created() {}
 });
 
 /***/ }),
@@ -56164,7 +56132,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        //console.log(this.$refs.imgDoc.clientWidth)
         this.$refs.absoluteDiv.style.width = this.$refs.imgDoc.clientWidth + 1 + 'px';
         this.$refs.absoluteDiv2.style.width = this.$refs.imgDoc2.clientWidth + 1 + 'px';
     },
@@ -56545,31 +56512,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             sideMenu: [{ text: 'Защо Косара? Защо Оренда?' }, { text: 'Нашата цел' }, { text: 'Нашата мисия' }, { text: 'Нашата история накратко' }],
             offset: -115
         };
-    },
-
-    methods: {
-        click: function click() {}
-    },
-    mounted: function mounted() {
-        var forusMenu = this.$refs.forusMenu.clientHeight;
-        //alert(forusMenu)
-        if (forusMenu > 70) {
-
-            //this.offset=1;
-        }
-        if (forusMenu > 43 && forusMenu <= 70) {
-            // this.offset+=(ul-80);
-        }
-    },
-    created: function created() {
-        /*let forusMenu=this.$refs.forusMenu.clientHeight;
-        alert(forusMenu)
-        if(forusMenu>70){
-             //this.offset=1;
-        }
-        if(forusMenu>43 && forusMenu<=70){
-           // this.offset+=(ul-80);
-        }*/
     }
 });
 
@@ -56788,138 +56730,11 @@ if (false) {
 }
 
 /***/ }),
-/* 111 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(112)
-}
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(114)
-/* template */
-var __vue_template__ = __webpack_require__(115)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-2d3d58c5"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/AppAdvices.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2d3d58c5", Component.options)
-  } else {
-    hotAPI.reload("data-v-2d3d58c5", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(113);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(1)("1e2edc60", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d3d58c5\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AppAdvices.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2d3d58c5\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./AppAdvices.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 114 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    name: "AppAdvices"
-});
-
-/***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticStyle: { "background-color": "blue" } }, [
-    _vm._v("\n    dasda\n    dsad\n    das\n")
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2d3d58c5", module.exports)
-  }
-}
-
-/***/ }),
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -57006,7 +56821,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n#contacts-container[data-v-781b9e79]{\n    border:4px solid #E1BE60;\n    border-radius: 2px;\n    background-image:url(" + escape(__webpack_require__(119)) + ");\n    background-position: center;\n    background-size: cover;\n    background-repeat: no-repeat;\n}\n#contacts-content[data-v-781b9e79]{\n      font-size: 17px;\n      background-color: white;\n      -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);\n      box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);\n}\n#contactus-img[data-v-781b9e79]{\n      max-height: 130px;\n}\n#creator[data-v-781b9e79]{\n}\nb[data-v-781b9e79]{\n}\n#social-div[data-v-781b9e79]{\n      background-color: #E1BE60;\n      border-top-left-radius:10px;\n      border-top-right-radius:10px;\n}\n#social-div>span>i[data-v-781b9e79]{\n      font-size: 40px;\n      color:#826135;\n      text-shadow:1px 1px 1px black;\n      cursor: pointer;\n}\n#social-div>span>i[data-v-781b9e79]:hover{\n    color:grey;\n}\n", ""]);
+exports.push([module.i, "\n#contacts-container[data-v-781b9e79]{\n    border:4px solid #E1BE60;\n    border-radius: 2px;\n    background-image:url(" + escape(__webpack_require__(119)) + ");\n    background-position: center;\n    background-size: cover;\n    background-repeat: no-repeat;\n}\n#contacts-content[data-v-781b9e79]{\n      font-size: 17px;\n      background-color: white;\n      -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);\n      box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);\n}\n#contactus-img[data-v-781b9e79]{\n      max-height: 130px;\n}\n#social-div[data-v-781b9e79]{\n      background-color: #E1BE60;\n      border-top-left-radius:10px;\n      border-top-right-radius:10px;\n}\n#social-div>span>i[data-v-781b9e79]{\n      font-size: 40px;\n      color:#826135;\n      text-shadow:1px 1px 1px black;\n      cursor: pointer;\n}\n#social-div>span>i[data-v-781b9e79]:hover{\n    color:grey;\n}\n", ""]);
 
 // exports
 
@@ -57408,53 +57223,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 this.$router.push('/travelout/create');
             }
         },
-        getObjects: function getObjects() {
+        getThem: function getThem(model) {
             var _this = this;
 
-            var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+            var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
+            axios.get('/api/' + model + '?page=' + page).then(function (res) {
+                return _this.objects = res.data;
+            }).catch(function (err) {
+                return console.log(err.response.data);
+            });
+        },
+        getObjects: function getObjects() {
             if (this.comp === 'Event') {
-                axios.get('/api/events?page=' + page).then(function (res) {
-                    return _this.objects = res.data;
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
+                this.getThem('events');
             } else if (this.comp === 'Advice') {
-                axios.get('/api/advices?page=' + page).then(function (res) {
-                    return _this.objects = res.data;
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
+                this.getThem('advices');
             } else if (this.comp === 'TravelBulgaria') {
-                axios.get('/api/travels?page=' + page).then(function (res) {
-                    return _this.objects = res.data;
-                }).catch(function (err) {
-                    return console.log(err.response.data.error);
-                });
+                this.getThem('travels');
             } else if (this.comp === 'TravelOutside') {
-                axios.get('/api/travelout?page=' + page).then(function (res) {
-                    return _this.objects = res.data;
-                }).catch(function (err) {
-                    return console.log(err.response.data);
-                });
+                this.getThem('travelout');
             }
         },
         deleteObject: function deleteObject(index) {
-            console.log(this.objects);
-            console.log(index);
             this.objects.data.splice(index, 1);
-            console.log(this.objects);
+        },
+        setObjectContainerImage: function setObjectContainerImage(file) {
+            document.getElementById('objects-container').style.backgroundImage = 'url(\'../images/' + file + '\')';
         }
     },
     mounted: function mounted() {
         if (this.comp === 'Event') {
-            document.getElementById('objects-container').style.backgroundImage = "url('../images/3.jpg')";
+            this.setObjectContainerImage('3.jpg');
         } else if (this.comp === 'Advice') {
-            document.getElementById('objects-container').style.backgroundImage = "url('../images/22.jpeg')";
+            this.setObjectContainerImage('22.jpeg');
         } else if (this.comp === 'TravelBulgaria') {
-            document.getElementById('objects-container').style.backgroundImage = "url('../images/bg2.jpg')";
+            this.setObjectContainerImage('bg2.jpg');
         } else if (this.comp === 'TravelOutside') {
-            document.getElementById('objects-container').style.backgroundImage = "url('../images/bul.jpg')";
+            this.setObjectContainerImage('bul.jpg');
         }
     },
     created: function created() {
@@ -58188,8 +57994,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 slug: ''
             },
             editMode: false,
-            errors: null,
-            success: {}
+            errors: null
         };
     },
 
@@ -58203,43 +58008,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.errors = val;
             console.log(val);
         },
-        create: function create() {
+        createRequest: function createRequest(model) {
             var _this = this;
+
+            var path = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+            if (path === null) {
+                path = model;
+            }
+            console.log(path);
+            axios.post('/api/' + model + '/create', this.form).then(function (res) {
+                _this.errors = null;
+                _this.$router.push('/' + path);
+            }).catch(function (err) {
+                console.log(err);
+                if (err.response.data.errors) {
+                    _this.checkError(err.response.data.errors);
+                    scroll(0, 0);
+                }
+            });
+        },
+        create: function create() {
 
             if (this.isAdmin) {
                 if (this.comp === 'Event') {
-                    axios.post('/api/events/create', this.form).then(function (res) {
-                        _this.errors = null;
-                        _this.$router.push('/events');
-                    }).catch(function (err) {
-                        if (err.response.data.errors) {
-                            _this.checkError(err.response.data.errors);
-                            scroll(0, 0);
-                        }
-                    });
+                    this.createRequest('events');
                 } else if (this.comp === 'Advice') {
-                    axios.post('/api/advices/create', this.form).then(function (res) {
-                        _this.checkError(res.data.errors);
-                        _this.$router.push('/advices');
-                    }).catch(function (err) {
-                        return console.log(err.response.data);
-                    });
+                    this.createRequest('advices');
                 } else if (this.comp === 'TravelBulgaria') {
                     this.form.country = 'bg';
-                    axios.post('/api/travels/create', this.form).then(function (res) {
-                        _this.checkError(res.data.errors);
-                        _this.$router.push('/travelbg');
-                    }).catch(function (err) {
-                        return console.log(err.response.data);
-                    });
+                    this.createRequest('travels', 'travelbg');
                 } else if (this.comp === 'TravelOutside') {
                     this.form.country = 'out';
-                    axios.post('/api/travels/create', this.form).then(function (res) {
-                        _this.checkError(res.data.errors);
-                        _this.$router.push('/travelout');
-                    }).catch(function (err) {
-                        return console.log(err.response.data);
-                    });
+                    this.createRequest('travels', 'travelout');
                 }
             }
         }
@@ -58849,88 +58650,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
-        update: function update() {
+        updateIt: function updateIt(model) {
             var _this = this;
 
-            if (this.comp === 'Event') {
+            var path = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
-                axios({
-                    method: 'patch',
-                    url: '/api/events/' + this.object.slug,
-                    data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id }
-                }).then(function (res) {
-                    _this.$router.push('/events');
-                }).catch(function (err) {
-                    return console.log(err.response.data.error);
-                });
-            } else if (this.comp === 'Advice') {
-                axios({
-                    method: 'patch',
-                    url: '/api/advices/' + this.object.slug,
-                    data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id },
-                    headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
-                }).then(function (res) {
-                    _this.$router.push('/advices');
-                }).catch(function (err) {
-                    return console.log(err.response.data.error);
-                });
-            } else if (this.comp === 'TravelBulgaria') {
-                axios({
-                    method: 'patch',
-                    url: '/api/travels/' + this.object.slug,
-                    data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id, country: 'bg' },
-                    headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
-                }).then(function (res) {
-                    _this.$router.push('/travelbg');
-                }).catch(function (err) {
-                    return console.log(err.response.data.error);
-                });
-            } else if (this.comp === 'TravelOutside') {
-                axios({
-                    method: 'patch',
-                    url: '/api/travels/' + this.object.slug,
-                    data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id, country: 'out' },
-                    headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
-                }).then(function (res) {
-                    _this.$router.push('/travelout');
-                }).catch(function (err) {
-                    return console.log(err.response.data.error);
-                });
+            if (path === null) {
+                path = model;
             }
+            axios({
+                method: 'patch',
+                url: '/api/' + model + '/' + this.object.slug,
+                data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id }
+            }).then(function (res) {
+                _this.$router.push('/' + path);
+            }).catch(function (err) {
+                return console.log(err.response.data.error);
+            });
+        },
+        update: function update() {
+            if (this.comp === 'Event') {
+                this.updateIt('events');
+            } else if (this.comp === 'Advice') {
+                this.updateIt('advices');
+            } else if (this.comp === 'TravelBulgaria') {
+                this.updateIt('travels', 'travelbg');
+            } else if (this.comp === 'TravelOutside') {
+                this.updateIt('travels', 'travelout');
+            }
+        },
+        editIt: function editIt(model) {
+            var _this2 = this;
 
-            /* axios.patch('/api/events/'+this.event.slug,{title:this.event.title,body:this.event.body,user_id:this.event.user_id})
-                 .then(res=>{this.$router.push('/events')}).catch(err=>console.log(err.response.data.error));*/
-        }
-    },
-    updated: function updated() {},
-    created: function created() {
-        var _this2 = this;
-
-        var slug = this.$route.params.show;
-        if (this.comp === 'Event') {
-            axios.get('/api/events/' + slug).then(function (res) {
+            var slug = this.$route.params.show;
+            axios.get('/api/' + model + '/' + slug).then(function (res) {
                 return _this2.object = res.data.data;
             }).catch(function (err) {
-                return console.log(err);
+                return console.log(err.response.data);
             });
+        }
+    },
+
+    created: function created() {
+
+        if (this.comp === 'Event') {
+            this.editIt('events');
         } else if (this.comp === 'Advice') {
-            axios.get('/api/advices/' + slug).then(function (res) {
-                _this2.object = res.data.data;
-            }).catch(function (err) {
-                return console.log(err.response.data);
-            });
-        } else if (this.comp === 'TravelBulgaria') {
-            axios.get('/api/travels/' + slug).then(function (res) {
-                _this2.object = res.data.data;
-            }).catch(function (err) {
-                return console.log(err.response.data);
-            });
-        } else if (this.comp === 'TravelOutside') {
-            axios.get('/api/travels/' + slug).then(function (res) {
-                _this2.object = res.data.data;
-            }).catch(function (err) {
-                return console.log(err.response.data);
-            });
+            this.editIt('advices');
+        } else if (this.comp === 'TravelBulgaria' || this.comp === 'TravelOutside') {
+            this.editIt('travels');
         }
     },
 
@@ -62505,7 +62273,6 @@ var actions = {
                     url: '/api/auth/me',
                     headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
                 }).then(function (res) {
-                    console.log(res.data.id);
                     commit('setId', res.data.id);
                     dispatch('isAdmin', res.data.isAdmin);
                 }).catch(function (err) {

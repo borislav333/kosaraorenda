@@ -50,11 +50,6 @@
     #contactus-img{
         max-height: 130px;
     }
-    #creator{
-
-    }
-    b{
-    }
     #social-div{
         background-color: #E1BE60;
         border-top-left-radius:10px;
