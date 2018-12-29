@@ -1,7 +1,6 @@
 const state={
     isAdmin:false,
     isValidToken:false,
-    id:null,
 }
 
 const mutations={
@@ -21,9 +20,6 @@ const mutations={
             state.isValidToken=false;
         }
     },
-    setId(state,value){
-        state.id=value;
-    }
 }
 
 const actions={
@@ -39,7 +35,6 @@ const actions={
                         url: '/api/auth/me',
                         headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
                     }).then(res=>{
-                        commit('setId',res.data.id);
                         dispatch('isAdmin',res.data.isAdmin);
                     }).catch(err=>console.log(err))
                 }
@@ -55,9 +50,6 @@ const getters={
     getIsValidToken(state){
         return state.isValidToken;
     },
-    getId(state){
-        return state.id;
-    }
 }
 
 export default {

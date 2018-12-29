@@ -55,7 +55,6 @@
                 form:{
                     title:'',
                     body:'',
-                    user_id:this.$store.getters.getId,
                     slug:'',
                 },
                 editMode:false,

@@ -71,8 +71,10 @@
             },
             getThem(model,page=1){
                 axios.get(`/api/${model}?page=`+page)
-                    .then(res=>(this.objects=res.data))
-                    .catch(err=>console.log(err.response.data));
+                    .then(res=>{
+                        this.objects=res.data
+                        console.log(res.data)
+                    }).catch(err=>console.log(err.response.data));
             },
            getObjects(){
                if(this.comp==='Event'){

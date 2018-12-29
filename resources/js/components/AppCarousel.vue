@@ -11,10 +11,9 @@
                 <div id="ad1" class="carousel-img"></div>
                 <div class="carousel-caption h-75 m-auto">
                     <div class="container m-auto "style="" id="">
-                        <h3><span>Добре дошли в сайта <b>Косара Оренда</b> !</span></h3>
-                        <p id="p-slide-1" class="w-100 mt-3 d-none"><span><!--It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                            of letters, as opposed to ...--></span></p>
+                        <h3 class="mb-3"><span>Добре дошли в сайта <b>Косара Оренда</b> !</span></h3>
+                        <p id="p-slide-1" class="col-12 col-md-9  mt-5 m-auto font-italic"><span><b>"История,мистика и традиции"</b> - това е ,което ни обединява
+                            и ни прави по-силни физически и душевно,прави ни истински българи.Това е нашето мото!</span></p>
                     </div>
 
                 </div>
@@ -116,7 +115,9 @@
         border-radius:4px;
         background-color: rgba(10,9,10,0.7);
     }
-
+    #p-slide-1{
+        font-size: 19px;
+    }
     #block {
         height: 60px;
         background-color: #e1be60;

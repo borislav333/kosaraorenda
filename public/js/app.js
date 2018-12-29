@@ -55377,7 +55377,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n#demo[data-v-dd2d5df4]{\n    height: 500px;\n    z-index:1;\n}\n.carousel-inner[data-v-dd2d5df4]{\n    border-bottom: 10px solid #826135;\n    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);\n    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);\n}\n.carousel-img[data-v-dd2d5df4]{\n    height: 500px;\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n#ad1[data-v-dd2d5df4]{\n    background-image:url(" + escape(__webpack_require__(87)) + ");\n    background-attachment: fixed;\n}\n#ad2[data-v-dd2d5df4]{\n    background-image:url(" + escape(__webpack_require__(88)) + ");\n    background-attachment: fixed;\n}\n#ad3[data-v-dd2d5df4]{\n    background-image:url(" + escape(__webpack_require__(89)) + ");\n    background-attachment: fixed;\n}\nh3>span[data-v-dd2d5df4]{\n    padding: 2px 12px;\n    border-radius:4px;\n    background-color: rgba(10,9,10,0.7);\n    line-height: 160%;\n    -webkit-box-decoration-break: clone;\n            box-decoration-break: clone;\n}\n#h3-2[data-v-dd2d5df4]{\n}\nspan>b[data-v-dd2d5df4]{\n    color:rgba(223,178,0,1);\n}\np[data-v-dd2d5df4]{\n    padding: 2px 8px;\n    border-radius:4px;\n    background-color: rgba(10,9,10,0.7);\n}\n#block[data-v-dd2d5df4] {\n    height: 60px;\n    background-color: #e1be60;\n    -webkit-clip-path: polygon(0 0, 20% 100%, 80% 100%, 100% 0%);\n            clip-path: polygon(0 0, 20% 100%, 80% 100%, 100% 0%);\n}\n@media only screen and (max-width: 600px) {\n#block[data-v-dd2d5df4]{\n        margin-top:20px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#demo[data-v-dd2d5df4]{\n    height: 500px;\n    z-index:1;\n}\n.carousel-inner[data-v-dd2d5df4]{\n    border-bottom: 10px solid #826135;\n    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);\n    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);\n}\n.carousel-img[data-v-dd2d5df4]{\n    height: 500px;\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n#ad1[data-v-dd2d5df4]{\n    background-image:url(" + escape(__webpack_require__(87)) + ");\n    background-attachment: fixed;\n}\n#ad2[data-v-dd2d5df4]{\n    background-image:url(" + escape(__webpack_require__(88)) + ");\n    background-attachment: fixed;\n}\n#ad3[data-v-dd2d5df4]{\n    background-image:url(" + escape(__webpack_require__(89)) + ");\n    background-attachment: fixed;\n}\nh3>span[data-v-dd2d5df4]{\n    padding: 2px 12px;\n    border-radius:4px;\n    background-color: rgba(10,9,10,0.7);\n    line-height: 160%;\n    -webkit-box-decoration-break: clone;\n            box-decoration-break: clone;\n}\n#h3-2[data-v-dd2d5df4]{\n}\nspan>b[data-v-dd2d5df4]{\n    color:rgba(223,178,0,1);\n}\np[data-v-dd2d5df4]{\n    padding: 2px 8px;\n    border-radius:4px;\n    background-color: rgba(10,9,10,0.7);\n}\n#p-slide-1[data-v-dd2d5df4]{\n    font-size: 19px;\n}\n#block[data-v-dd2d5df4] {\n    height: 60px;\n    background-color: #e1be60;\n    -webkit-clip-path: polygon(0 0, 20% 100%, 80% 100%, 100% 0%);\n            clip-path: polygon(0 0, 20% 100%, 80% 100%, 100% 0%);\n}\n@media only screen and (max-width: 600px) {\n#block[data-v-dd2d5df4]{\n        margin-top:20px;\n}\n}\n", ""]);
 
 // exports
 
@@ -55406,7 +55406,6 @@ module.exports = "/images/slide-3.jpg?7000b27ebf79ffa4af1c43deec50fa57";
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -55597,7 +55596,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "carousel-caption h-75 m-auto" }, [
         _c("div", { staticClass: "container m-auto ", attrs: { id: "" } }, [
-          _c("h3", [
+          _c("h3", { staticClass: "mb-3" }, [
             _c("span", [
               _vm._v("Добре дошли в сайта "),
               _c("b", [_vm._v("Косара Оренда")]),
@@ -55607,8 +55606,18 @@ var staticRenderFns = [
           _vm._v(" "),
           _c(
             "p",
-            { staticClass: "w-100 mt-3 d-none", attrs: { id: "p-slide-1" } },
-            [_c("span")]
+            {
+              staticClass: "col-12 col-md-9  mt-5 m-auto font-italic",
+              attrs: { id: "p-slide-1" }
+            },
+            [
+              _c("span", [
+                _c("b", [_vm._v('"История,мистика и традиции"')]),
+                _vm._v(
+                  " - това е ,което ни обединява\r\n                            и ни прави по-силни физически и душевно,прави ни истински българи.Това е нашето мото!"
+                )
+              ])
+            ]
           )
         ])
       ])
@@ -57229,7 +57238,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
             axios.get('/api/' + model + '?page=' + page).then(function (res) {
-                return _this.objects = res.data;
+                _this.objects = res.data;
+                console.log(res.data);
             }).catch(function (err) {
                 return console.log(err.response.data);
             });
@@ -57990,7 +58000,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             form: {
                 title: '',
                 body: '',
-                user_id: this.$store.getters.getId,
                 slug: ''
             },
             editMode: false,
@@ -62229,8 +62238,7 @@ var getters = {
 "use strict";
 var state = {
     isAdmin: false,
-    isValidToken: false,
-    id: null
+    isValidToken: false
 };
 
 var mutations = {
@@ -62248,9 +62256,6 @@ var mutations = {
         } else {
             state.isValidToken = false;
         }
-    },
-    setId: function setId(state, value) {
-        state.id = value;
     }
 };
 
@@ -62273,7 +62278,6 @@ var actions = {
                     url: '/api/auth/me',
                     headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }
                 }).then(function (res) {
-                    commit('setId', res.data.id);
                     dispatch('isAdmin', res.data.isAdmin);
                 }).catch(function (err) {
                     return console.log(err);
@@ -62289,9 +62293,6 @@ var getters = {
     },
     getIsValidToken: function getIsValidToken(state) {
         return state.isValidToken;
-    },
-    getId: function getId(state) {
-        return state.id;
     }
 };
 
