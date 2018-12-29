@@ -58672,9 +58672,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 url: '/api/' + model + '/' + this.object.slug,
                 data: { title: this.object.title, body: this.object.body, user_id: this.object.user_id }
             }).then(function (res) {
+                console.log(res);
                 _this.$router.push('/' + path);
             }).catch(function (err) {
-                return console.log(err.response.data.error);
+                return console.log(err);
             });
         },
         update: function update() {
