@@ -16,7 +16,7 @@ interface IBaseCrud
     public function __construct();
     public function index();
     public function store(Request $request);
-    public function show($slug);
+    public function show(string $slug);
     public function update(Request $request,$slug);
-    public function destroy($slug);
+    public function destroy(string $slug);
 }
