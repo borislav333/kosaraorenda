@@ -45,6 +45,7 @@ import md from 'marked'
 window.md=md;
 // commonjs require
 Vue.use(Editor);
+
 Vue.component('pagination', require('laravel-vue-pagination'));
 
 const app = new Vue({

@@ -69,25 +69,34 @@
                 }
 
             },
-            getThem(model,page=1){
-                axios.get(`/api/${model}?page=`+page)
-                    .then(res=>{
-                        this.objects=res.data
-                        console.log(res.data)
-                    }).catch(err=>console.log(err.response.data));
-            },
-           getObjects(){
+           getObjects(page=1){
                if(this.comp==='Event'){
-                   this.getThem('events');
+                   axios.get(`/api/events?page=`+page)
+                       .then(res=>{
+                           this.objects=res.data
+                           console.log(res.data)
+                       }).catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='Advice'){
-                   this.getThem('advices');
+                   axios.get(`/api/advices?page=`+page)
+                       .then(res=>{
+                           this.objects=res.data
+                           console.log(res.data)
+                       }).catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='TravelBulgaria'){
-                   this.getThem('travels');
+                   axios.get(`/api/travels?page=`+page)
+                       .then(res=>{
+                           this.objects=res.data
+                           console.log(res.data)
+                       }).catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='TravelOutside'){
-                   this.getThem('travelout');
+                   axios.get(`/api/travelout?page=`+page)
+                       .then(res=>{
+                           this.objects=res.data
+                           console.log(res.data)
+                       }).catch(err=>console.log(err.response.data));
                }
 
            },
