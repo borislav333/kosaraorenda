@@ -109,12 +109,14 @@
         transition: transform 2s;
     }
    .client-img{
-       height: 100px;
-       width: 100px;
+       height: 85px;
+       width: 85px;
        border-radius: 50%;
-       border:3px solid grey;
+       border:2px solid dimgrey;
        background-size: cover;
-
+       -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+       -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+       box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
    }
     #client-img-0{
         background-image: url("../images/happy/happy1.jpg");

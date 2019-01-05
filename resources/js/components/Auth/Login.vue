@@ -38,7 +38,12 @@
                   let token=access_token.split('.');
                   token=JSON.parse(atob(token[1]));
                   let iss=token['iss'];
-                  if(iss==='http://127.0.0.1:8000/api/auth/login'){
+                  if(iss==='http://127.0.0.1:8000/api/auth/login' ||
+                      iss==='https://kosaraorenda.com/api/auth/login' ||
+                      iss==='https://www.kosaraorenda.com/api/auth/login' ||
+                      iss==='http://kosaraorenda.com/api/auth/login' ||
+                      iss==='http://www.kosaraorenda.com/api/auth/login'){
+
                       localStorage.setItem('token',access_token);
                       this.$store.dispatch('isAdmin',res.data.is_admin);
                       this.$router.push('/events');
