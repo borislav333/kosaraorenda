@@ -69,7 +69,6 @@
                     url:`/api/${model}/`+this.object.slug,
                     data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id},
                 }).then(res=>{
-                    console.log(res);
                     this.$router.push(`/${path}`)
                 }).catch(err=>console.log(err));
             },

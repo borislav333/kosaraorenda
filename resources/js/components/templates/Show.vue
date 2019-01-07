@@ -74,28 +74,24 @@
                    axios.get(`/api/events?page=`+page)
                        .then(res=>{
                            this.objects=res.data
-                           console.log(res.data)
                        }).catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='Advice'){
                    axios.get(`/api/advices?page=`+page)
                        .then(res=>{
                            this.objects=res.data
-                           console.log(res.data)
                        }).catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='TravelBulgaria'){
                    axios.get(`/api/travels?page=`+page)
                        .then(res=>{
                            this.objects=res.data
-                           console.log(res.data)
                        }).catch(err=>console.log(err.response.data));
                }
                else if(this.comp==='TravelOutside'){
                    axios.get(`/api/travelout?page=`+page)
                        .then(res=>{
                            this.objects=res.data
-                           console.log(res.data)
                        }).catch(err=>console.log(err.response.data));
                }
 

@@ -6,6 +6,13 @@
 
                 <div v-for="(item,index) in content" class="client-div col-12  col-lg-3 col-md-4 col-sm-6 text-center">
                     <div class="client-img m-auto mb-5" :id="'client-img-'+index"></div>
+                    <div class="mt-1">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
                     <div style="height: 10px"></div>
                     <div class="client-name-div m-auto mt-5" :id="'client-name-'+index"><span class="client-name">{{item.name}}</span></div>
                     <div class="client-comment m-auto" :id="'client-comment-'+index">
@@ -173,5 +180,22 @@
     #client-arrows-div>div>span{
         cursor: pointer;
         border-radius: 20%;
+    }
+
+    .client-comment::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .client-comment::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    .client-comment::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius:15px;
+    }
+
+    .checked {
+        color: orange;
     }
 </style>
