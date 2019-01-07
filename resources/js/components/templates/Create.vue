@@ -76,12 +76,15 @@
                 if(path===null){
                     path=model;
                 }
-                console.log(path);
+                console.log(this.form);
+
                 axios.post(`/api/${model}/create`,this.form).then(res=>{
                     this.errors=null;
+                    console.log(res);
                     this.$router.push(`/${path}`);
+
                 }).catch(err=>{
-                    console.log(err);
+                    console.log(err.response.data);
                     if(err.response.data.errors){
                         this.checkError(err.response.data.errors);
                         scroll(0,0)
@@ -89,7 +92,8 @@
                 });
             },
             create(){
-
+                console.log('DADADA');
+                    console.log(this.isAdmin);
                 if(this.isAdmin){
                     if(this.comp==='Event'){
                         this.createRequest('events');

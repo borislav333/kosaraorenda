@@ -93,7 +93,6 @@
         updated(){
         },
         created(){
-
         }
     }
 </script>
@@ -134,7 +133,7 @@
         background-image: url("../images/2.jpg");
     }
     .client-comment{
-        width: 240px;
+
 
         border:1px solid grey;
         border-top:none;
@@ -148,6 +147,7 @@
         font-family: Arial;
         overflow-y: scroll;
         max-height: 100px;
+        max-width:240px;
         /*text-shadow: 1px 0px 1px #AE8B03;*/
     }
     .client-name{

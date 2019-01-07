@@ -1,7 +1,7 @@
 <template>
     <div class="container mt-4 ">
 
-        <form class="border col-6 m-auto text-center " @submit.prevent="submit">
+        <form class="border col-6 m-auto text-center " >
            <div class="form-group">
                <label for=""><b>Е-мейл</b></label>
                <input type="email" class="form-control" name="email" v-model="form.email">
@@ -46,7 +46,12 @@
 
                       localStorage.setItem('token',access_token);
                       this.$store.dispatch('isAdmin',res.data.is_admin);
-                      this.$router.push('/events');
+
+                      window.location.href="./events";
+                      //this.$router.push('/events');
+
+
+
                   }
               }).catch(err=>console.log(err))
           }
