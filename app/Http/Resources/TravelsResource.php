@@ -22,6 +22,10 @@ class TravelsResource extends JsonResource
           'title'=>$this->title,
           'body'=>$this->body,
             'user_id'=>$this->user_id,
+            'created_date'=>$this->created_at->format('M'),
+            'day'=>$this->day,
+            'month'=>$this->month,
+            'year'=>$this->year,
           'created_at'=>$this->created_at->diffForHumans(),
           'updated_at'=>$this->updated_at->diffForHumans(),
         ];

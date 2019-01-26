@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*Route::get('/travelbg/{a}', 'TravelsController@indexOut');*/
 Route::get('/{any}', 'HomeController@view')->where('any', '.*');
 //Route::get('/', 'HomeController@view')->name('welcome');
 

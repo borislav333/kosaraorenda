@@ -16,6 +16,27 @@
                         <div class="form-group text-center">
                             <label>Заглавие: </label>
                             <input type="text" name="title" class="form-control" v-model="form.title">
+                            <div v-if="comp===('TravelBulgaria' || 'TravelOutside' || 'TravelBulgariaId')" class="mt-1">
+                                <select name="month" id="selector-month" v-model="form.month">
+                                    <option value="1">Януари</option>
+                                    <option value="2">Февруари</option>
+                                    <option value="3">Март</option>
+                                    <option value="4">Април</option>
+                                    <option value="5">Май</option>
+                                    <option value="6">Юни</option>
+                                    <option value="7">Юли</option>
+                                    <option value="8">Август</option>
+                                    <option value="9">Септември</option>
+                                    <option value="10">Октомври</option>
+                                    <option value="11">Ноември</option>
+                                    <option value="12">Декември</option>
+
+
+                                </select>
+                                <input type="number" min="2019" value="2019" name="year" id="selector-year" style="max-height: 27px;"
+                                v-model="form.year">
+                            </div>
+
                         </div>
                         <div class="form-group text-center">
                             <label >Съдържание: </label>
@@ -56,6 +77,8 @@
                     title:'',
                     body:'',
                     slug:'',
+                    month:1,
+                    year:2019,
                 },
                 editMode:false,
                 errors:null,
@@ -96,6 +119,10 @@
                         this.createRequest('advices');
                     }
                     else if(this.comp==='TravelBulgaria'){
+                        this.form.country='bg';
+                        this.createRequest('travels','travelbg');
+                    }
+                    else if(this.comp==='TravelBulgariaId'){
                         this.form.country='bg';
                         this.createRequest('travels','travelbg');
                     }

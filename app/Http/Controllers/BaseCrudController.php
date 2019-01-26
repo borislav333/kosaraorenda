@@ -54,6 +54,7 @@ class BaseCrudController extends Controller implements IBaseCrud
                 return response(['errors'=>$validator->errors()],400);
             }
             $request['slug']=str_slug($request->title);
+
             $relation=strtolower($this->model);
             auth()->user()->$relation()->create($request->all());
             return response('Created',Response::HTTP_CREATED);
@@ -78,7 +79,7 @@ class BaseCrudController extends Controller implements IBaseCrud
             return response(['errors' => $validator->errors()], 400);
         }
         $this->getEventsWithSlug($slug)->update($request->all());
-        return \response('Updated', Response::HTTP_ACCEPTED);
+        return \response($request->all(), Response::HTTP_ACCEPTED);
     }
 
     public function destroy(string $slug)

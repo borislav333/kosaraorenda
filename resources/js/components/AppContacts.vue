@@ -12,6 +12,11 @@
                         <br>ТЦ "Сити",сутерен,офис 34</span></div>
                     <div><span><b>Телефони:</b> 0898854271 , 0885819182</span></div>
                     <div><span><b>Е-мейл:</b> kosaraorenda@abv.bg</span></div>
+                    <div>
+                        <div><b>Банка:</b> УниКредит Булбанк - Стара Загора</div>
+                        <div><b>BIC:</b> UNCR BGSF</div>
+                        <div><b>IBAN:</b> BG67 UNCR 7000 1523 2151 81</div>
+                    </div>
                 </div>
                 <div id="social-div" class="text-center mt-3">
                     <span ><i class="fab fa-facebook-square"></i></span>

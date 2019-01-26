@@ -39,6 +39,9 @@
             else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside' ){
                 axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err));
             }
+            else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside' ){
+                axios.get('/api/travels/'+slug).then(res=>{this.object=res.data.data}).catch(err=>console.log(err));
+            }
 
         }
     }

@@ -23,10 +23,13 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('/events','EventsController')->except(['create']);
 Route::apiResource('/advices','AdvicesController')->except(['create']);
 Route::apiResource('/travels','TravelsController')->except(['create']);
+
+
 Route::post('/advices/create','AdvicesController@store');
 Route::post('/events/create','EventsController@store')->middleware('check.admin');
 Route::post('/travels/create','TravelsController@store');
 Route::get('/travelout','TravelsController@indexOut');
+Route::get('/travelbg/date/{month}/{year}','TravelsController@indexOut2');
 /*
 Route::get('/travels/create','TravelsController@store');
 Route::post('/events/post/{show}','EventsController@show');

@@ -24,6 +24,7 @@ import ShowPostTravelOut from '../components/TravelOutside/ShowPostTravelOut.vue
 import ShowTravelOut from '../components/TravelOutside/ShowTravelOut.vue'
 import Login from '../components/Auth/Login.vue'
 
+import ShowTravelBgId from '../components/TravelBulgariaId/ShowTravelBgId.vue'
 const router = new VueRouter({
     mode:'history',
     routes:[
@@ -97,6 +98,11 @@ const router = new VueRouter({
         {
             path: '/travelbg',
             component:ShowTravelBg,
+
+        },
+        {
+            path: '/travelbg/date/:month/:year',
+            component:ShowTravelBgId,
 
         },
         {

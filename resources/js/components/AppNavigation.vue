@@ -56,9 +56,9 @@
         name: "AppNavigation",
         data(){
             return {
-                menu:[{text:'Начало',path:'/'},{text:'Екскурзии',path:'/travelbg',id:'steps'},
-                    {text:'За нас',path:'/forus',id:'forus'}, {text:'Събития',path:'/events'},
-                    {text:'Полезни съвети',path:'/advices'},{text:'Контакти',path:'/contacts'}],
+                menu:[{text:'Начало',path:'/'},{text:'За нас',path:'/forus',id:'forus'},{text:'Екскурзии',path:'/travelbg',id:'steps'},
+                     {text:'Събития',path:'/events'},
+                    {text:'Интересно',path:'/advices'},{text:'Контакти',path:'/contacts'}],
                 dropdownForUs:[{text:'',}],
                 clicked:false,
             }

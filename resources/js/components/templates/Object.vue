@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div  class="d-flex justify-content-between"><h4>
             <router-link class="text-dark" tag="a" :to="{path:pathObj}">{{obj.title}}</router-link></h4>
             <div v-if="isAdmin===1"><a  href="#" class="btn btn-warning mr-2" @click.prevent="edit">Редактирай</a>
@@ -58,6 +59,9 @@
                 else if(this.comp==='TravelOutside'){
                     return '/travelout/post/'+this.obj.slug;
                 }
+                else if(this.comp==='TravelBulgariaId'){
+                    return '/travelbg/post/'+this.obj.slug;
+                }
 
                 /*
                 else if(this.comp==='TravelBulgaria'){
@@ -81,6 +85,9 @@
                 else if(this.comp==='TravelBulgaria'){
                     this.$router.push({path:'/travelbg/'+this.obj.slug});
                 }
+                else if(this.comp==='TravelBulgariaId'){
+                    this.$router.push({path:'/travelbg/'+this.obj.slug});
+                }
                 else if(this.comp==='TravelOutside'){
                     this.$router.push({path:'/travelout/'+this.obj.slug});
                 }
@@ -95,7 +102,7 @@
                         axios.delete('/api/advices/'+this.obj.slug)
                             .then(res=>{this.$parent.deleteObject(this.index)}).catch(err=>console.log(err));
                     }
-                    else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside'){
+                    else if(this.comp==='TravelBulgaria' ||  this.comp==='TravelBulgariaId' ||this.comp==='TravelOutside'){
                         axios.delete('/api/travels/'+this.obj.slug)
                             .then(res=>{this.$parent.deleteObject(this.index)}).catch(err=>console.log(err));
                     }
@@ -103,6 +110,7 @@
 
             },
             show(){
+                this.$router.push({path:'/events/post/'+this.obj.slug,})
                 this.$router.push({path:'/events/post/'+this.obj.slug,})
             }
 

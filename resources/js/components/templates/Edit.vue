@@ -15,6 +15,26 @@
                             <div class="form-group text-center">
                                 <label >Заглавие: </label>
                                 <input type="text" name="title" class="form-control" v-model="object.title">
+                                <div v-if="comp===('TravelBulgaria' || 'TravelOutside' || 'TravelBulgariaId')" class="mt-1">
+                                    <select name="month" id="selector-month" v-model="object.month">
+                                        <option value="1">Януари</option>
+                                        <option value="2">Февруари</option>
+                                        <option value="3">Март</option>
+                                        <option value="4">Април</option>
+                                        <option value="5">Май</option>
+                                        <option value="6">Юни</option>
+                                        <option value="7">Юли</option>
+                                        <option value="8">Август</option>
+                                        <option value="9">Септември</option>
+                                        <option value="10">Октомври</option>
+                                        <option value="11">Ноември</option>
+                                        <option value="12">Декември</option>
+
+
+                                    </select>
+                                    <input type="number" min="2019" value="2019" name="year" id="selector-year" style="max-height: 27px;"
+                                           v-model="object.year">
+                                </div>
                             </div>
                             <div class="form-group text-center">
                                 <label >Съдържание: </label>
@@ -64,10 +84,11 @@
                 if(path===null){
                     path=model;
                 }
+
                 axios({
                     method:'patch',
                     url:`/api/${model}/`+this.object.slug,
-                    data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id},
+                    data:{title:this.object.title,body:this.object.body,user_id:this.object.user_id,month:this.object.month,year:this.object.year},
                 }).then(res=>{
                     this.$router.push(`/${path}`)
                 }).catch(err=>console.log(err));
@@ -83,6 +104,9 @@
                 else if(this.comp==='TravelBulgaria'){
                     this.updateIt('travels','travelbg');
                 }
+                else if(this.comp==='TravelBulgariaId'){
+                    this.updateIt('travels','travelbg');
+                }
                 else if(this.comp==='TravelOutside'){
                     this.updateIt('travels','travelout');
                 }
@@ -91,7 +115,10 @@
             },
             editIt(model){
                 let slug=this.$route.params.show;
-                axios.get(`/api/${model}/${slug}`).then(res=>this.object=res.data.data).catch(err=>console.log(err.response.data));
+                axios.get(`/api/${model}/${slug}`).then(res=>{
+                    this.object=res.data.data
+                    console.log(res.data.data)
+                }).catch(err=>console.log(err.response.data));
             },
 
         },
@@ -105,7 +132,7 @@
             else if(this.comp==='Advice'){
                 this.editIt('advices');
             }
-            else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside'){
+            else if(this.comp==='TravelBulgaria' || this.comp==='TravelOutside' || this.comp==='TravelBulgariaId'){
                 this.editIt('travels');
             }
         },

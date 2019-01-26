@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Travels extends Model
 {
 
-    protected $fillable=['title','body','user_id','country','slug'];
+    protected $fillable=['title','body','user_id','country','slug','month','year'];
     public function getRouteKeyName()
     {
         return 'slug';
